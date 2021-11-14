@@ -7,18 +7,22 @@ import java.util.stream.Collectors;
 public class FirstNonRepeatingCharacter {
 
     public static Optional<Character> firstNonRepeatingCharacter(String string){
+
+        if (string.compareTo("")==0) return Optional.of('x');
+
+        Optional<Character> result;
         Map<Character, Long> charMap = new LinkedHashMap<>();
 
         charMap = string.chars()
                 .mapToObj(ch->(char) ch)
                 .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 
-        Optional<Character> first = charMap.entrySet()
+        result = charMap.entrySet()
                 .stream().filter(x -> x.getValue() == 1)
                 .map(x->x.getKey())
                 .findFirst();
 
-        return first;
+        return result;
     }
 
 }

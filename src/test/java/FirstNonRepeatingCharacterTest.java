@@ -7,19 +7,15 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-//class FirstNonRepeatingCharacterTest {
-//
-//    @Test
-//    void firstNonRepeatingCharacter() {
-//        assertEquals(, FirstNonRepeatingCharacter.firstNonRepeatingCharacter(""));
-//    }
-//
-//    @ParameterizedTest
-//    @CsvSource({"a,a","b,b"})
-//    void firstNonRepeatingCharacter(String input, Optional<Character> expected) {
-//        assertEquals(expected, FirstNonRepeatingCharacter.firstNonRepeatingCharacter(input));
-//    }
-//
-//
-//
-//}
+class FirstNonRepeatingCharacterTest {
+
+    @ParameterizedTest
+    @CsvSource({"a,a",
+            "b,b",
+            "lleessteer,t",
+            "null,x"})
+    void firstNonRepeatingCharacter(String input, Character expected) {
+        assertEquals(Optional.of(expected), FirstNonRepeatingCharacter.firstNonRepeatingCharacter(input));
+    }
+
+}
