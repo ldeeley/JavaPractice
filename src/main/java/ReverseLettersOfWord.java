@@ -1,16 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ReverseLettersOfWord {
 
     public static String reverseLettersOfWord(String string){
 
-        String result = string;
-        List<String> words = List.of(string.split("\\PL+"));
-        words
+        List<String> words = new ArrayList<>(List.of(string.split("\\PL+")));
+        String result = words
                 .stream()
-                .forEach(System.out::println);
+                .map(x->new StringBuilder(x).reverse().toString())
+                .collect(Collectors.joining(" "));
+
         return result;
     }
 
