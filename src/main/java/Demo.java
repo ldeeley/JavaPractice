@@ -1,7 +1,7 @@
 public class Demo {
 
     public static void main(String[] args) {
-        System.out.println(FirstNonRepeatingCharacter.firstNonRepeatingCharacter("leesl"));
+        System.out.println(ReverseLettersOfWord.reverseLettersOfWord("All of this time. I wondered."));
     }
 
 }

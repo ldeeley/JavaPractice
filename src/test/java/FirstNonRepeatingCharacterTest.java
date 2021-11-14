@@ -10,10 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class FirstNonRepeatingCharacterTest {
 
     @ParameterizedTest
-    @CsvSource({"a,a",
-            "b,b",
-            "lleessteer,t",
-            "null,x"})
+    @CsvSource({"a,a","b,b","lleessteer,t"})
     void firstNonRepeatingCharacter(String input, Character expected) {
         assertEquals(Optional.of(expected), FirstNonRepeatingCharacter.firstNonRepeatingCharacter(input));
     }
