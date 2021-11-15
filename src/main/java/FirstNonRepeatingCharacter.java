@@ -1,36 +1,27 @@
 import java.util.LinkedHashMap;
-import java.util.Locale;
 import java.util.Map;
-import java.util.function.BinaryOperator;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class FirstNonRepeatingCharacter {
 
-    public static char firstNonRepeatingCharacter(String string){
-        Map<Character, Integer> charMap = new LinkedHashMap<>();
-        Function<Character, Character> keyMapper = new Function<Character, Character>() {
-            @Override
-            public Character apply(Character character) {
-                return character;
-            }
-        };
+    public static Optional<Character> firstNonRepeatingCharacter(String string){
 
-        Function<Character, Integer> valueMapper = new Function<Character, Integer>() {
-            @Override
-            public Integer apply(Character character) {
-                if (charMap.containsKey(character))
-                return null;
-            }
-        };
+        if (string=="") return Optional.of('x');
 
-        BinaryOperator<?> mergeFunction;
-
+        Optional<Character> result;
+        Map<Character, Long> charMap = new LinkedHashMap<>();
 
         charMap = string.chars()
                 .mapToObj(ch->(char) ch)
-                .collect(Collectors.toMap(keyMapper,valueMapper,mergeFunction));
-        }
+                .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()));
+
+        result = charMap.entrySet()
+                .stream().filter(x -> x.getValue() == 1)
+                .peek(System.out::println)
+                .map(x->x.getKey())
+                .findFirst();
 
         return result;
     }
