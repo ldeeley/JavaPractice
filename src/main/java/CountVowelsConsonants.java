@@ -12,8 +12,6 @@ public class CountVowelsConsonants {
         .mapToObj(c->(char) c)
         .collect(Collectors.partitioningBy(c->c.toString().matches("[aeiou]")));
 
-        map.entrySet().forEach(System.out::println);
-
         return map;
 
     }
