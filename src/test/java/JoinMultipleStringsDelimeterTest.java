@@ -11,7 +11,7 @@ class JoinMultipleStringsDelimeterTest {
     @Test
     void joinMultipleStringsDelimeter() {
 
-        List<String> strings = new ArrayList<>(List.of("hello","there","how","are","you"));
+        List<String> strings = new ArrayList<>(List.of("hello","how","are","you"));
         String expected = "hello,there,how,are,you";
         assertEquals(expected,JoinMultipleStringsDelimeter.joinMultipleStringsDelimeter(strings,','));
 
