@@ -1,8 +1,7 @@
 public class Demo {
 
     public static void main(String[] args) {
-        System.out.println(CountVowelsConsonants.vowelCount("abcdefghijk"));
-        System.out.println(CountVowelsConsonants.vowelCount("aaaaeffffghijk"));
+        System.out.println(PalindromeChecker.palindromeChecker(""));
 
     }
 
