@@ -9,6 +9,7 @@ public class RemoveDuplicates {
         str
                 .chars()
                 .mapToObj(c-> (char) c)
+                .filter()
                 .collect(Collectors.toSet(new LinkedHashSet<Character>(), )).t;
 
         return str;
