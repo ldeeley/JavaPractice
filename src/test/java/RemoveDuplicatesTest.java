@@ -6,6 +6,10 @@ class RemoveDuplicatesTest {
 
     @Test
     void removeDuplicates() {
-        assertEquals("LeSTR", RemoveDuplicates.removeDuplicates("LeeSTERT"));
+        assertEquals("LeSTER", RemoveDuplicates.removeDuplicates("LeeSTERT"));
+    }
+
+    @Test
+    void testRemoveDuplicates() {
     }
 }
